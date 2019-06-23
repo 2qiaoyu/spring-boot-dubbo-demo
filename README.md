@@ -6,6 +6,6 @@
 * dubbo 2.5.3
 
 ## 模块
-1. spring-boot-dubbo-server dubbo服务生产者
-2. spring-boot-dubbo-server-two dubbo服务消费者1
-3. spring-boot-dubbo-client dubbo服务消费者2
+1. spring-boot-dubbo-server dubbo服务生产者1
+2. spring-boot-dubbo-server-two dubbo服务生产者2
+3. spring-boot-dubbo-client dubbo服务消费者
