@@ -3,7 +3,7 @@ spring:
     name: spring-boot-dubbo-client
   datasource:
     password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8&&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&connectTimeout=0
     username: root
     tomcat:
@@ -21,12 +21,26 @@ spring:
         hbm2ddl:
           auto: update
     open-in-view: true
-  dubbo:
-    application:
-      name: consumer
-    registry:
-      address: zookeeper://127.0.0.1:2181
-    scan: org.spring.springboot.dubbo
 
 server:
   port: 8081
+
+demo:
+  service:
+    version: 1.0.0
+
+dubbo:
+  application:
+    id: spring-boot-dubbo-client
+    name: spring-boot-dubbo-client
+    server: spring-boot-dubbo-server,spring-boot-dubbo-server-two
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12346
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+  scan:
+    basePackages: org.spring.springboot.dubbo
+

@@ -10,5 +10,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CityDubboResposity extends JpaRepository<City, String> {
 
+    /**
+     * 根据城市名称，查询城市信息
+     *
+     * @param cityName
+     */
     City findByCityName(String cityName);
 }

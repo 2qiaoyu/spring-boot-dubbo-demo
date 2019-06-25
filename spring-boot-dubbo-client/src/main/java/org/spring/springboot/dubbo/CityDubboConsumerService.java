@@ -10,7 +10,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class CityDubboConsumerService {
 
-    @Reference(version = "1.0.0")
+    @Reference(version = "${demo.service.version}",
+            application = "${dubbo.application.server}",
+            registry = "${dubbo.registry.address}",
+            retries = -1,
+            check = false,
+            loadbalance = "roundrobin")
     CityDubboService cityDubboService;
 
     public City printCity(String cityName) {
